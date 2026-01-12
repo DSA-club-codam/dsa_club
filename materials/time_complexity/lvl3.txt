@@ -1,0 +1,90 @@
+// 1. Exponential recursion (Towers of Hanoi)
+void hanoi(int n, char from, char to, char aux) {
+	if (n == 0) return;
+	hanoi(n-1, from, aux, to);
+	printf("Move disk %d from %c to %c\n", n, from, to);
+	hanoi(n-1, aux, to, from);
+}
+hanoi(n, 'A', 'C', 'B');
+
+////////////////////////////////////////////////
+
+// 2. Generating all subsets (power set)
+void printSubsets(int arr[], int n) {
+	int total = 1 << n;
+	for (int mask = 0; mask < total; mask++) {
+		for (int i = 0; i < n; i++) {
+			if (mask & (1 << i)) printf("%d ", arr[i]);
+		}
+		printf("\n");
+	}
+}
+// Example usage:
+// int arr[] = {1,2,3}; printSubsets(arr, 3);
+
+////////////////////////////////////////////////
+
+// 3. Four nested loops with dependent bounds
+for (int i = 0; i < n; i++) {
+	for (int j = i; j < n; j++) {
+		for (int k = j; k < n; k++) {
+			for (int l = k; l < n; l++) {
+				printf("%d %d %d %d\n", i, j, k, l);
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////
+
+// 4. Recursive permutation generator
+void permute(int arr[], int l, int r) {
+	if (l == r) {
+		for (int i = 0; i <= r; i++) printf("%d ", arr[i]);
+		printf("\n");
+		return;
+	}
+	for (int i = l; i <= r; i++) {
+		int tmp = arr[l]; arr[l] = arr[i]; arr[i] = tmp;
+		permute(arr, l+1, r);
+		tmp = arr[l]; arr[l] = arr[i]; arr[i] = tmp;
+	}
+}
+// Example usage:
+// int arr[] = {1,2,3}; permute(arr, 0, 2);
+
+////////////////////////////////////////////////
+
+// 5. Matrix multiplication (triple nested loop)
+int A[n][n], B[n][n], C[n][n];
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < n; j++) {
+		C[i][j] = 0;
+		for (int k = 0; k < n; k++) {
+			C[i][j] += A[i][k] * B[k][j];
+		}
+	}
+}
+
+////////////////////////////////////////////////
+
+// 6. Recursive solution to the N-Queens problem
+int board[20][20];
+int solveNQ(int n, int row) {
+	if (row == n) return 1;
+	int count = 0;
+	for (int col = 0; col < n; col++) {
+		int safe = 1;
+		for (int i = 0; i < row; i++) {
+			if (board[i][col] || (col-(row-i)>=0 && board[i][col-(row-i)]) || (col+(row-i)<n && board[i][col+(row-i)])) safe = 0;
+		}
+		if (safe) {
+			board[row][col] = 1;
+			count += solveNQ(n, row+1);
+			board[row][col] = 0;
+		}
+	}
+	return count;
+}
+// Example usage:
+// solveNQ(n, 0);
