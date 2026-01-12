@@ -1,0 +1,5 @@
+What is a time complexity?
+What does Big-O describe?
+Worst case vs average case?
+What is O(1)?
+What is worse: O(n) or O(n log n)?

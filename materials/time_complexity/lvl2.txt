@@ -1,0 +1,78 @@
+
+// 1. Nested loop with increasing range
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < i; j++) {
+		printf("%d %d\n", i, j);
+	}
+}
+
+////////////////////////////////////////////////
+
+// 2. Four nested loops
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < n; j++) {
+		for (int k = 0; k < n; k++) {
+			for (int l = 0; l < n; l++) {
+				printf("%d %d %d %d\n", i, j, k, l);
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////
+
+// 3. Logarithmic loop inside a linear loop
+for (int i = 0; i < n; i++) {
+	int j = 1;
+	while (j < n) {
+		printf("%d %d\n", i, j);
+		j = j * 2;
+	}
+}
+
+////////////////////////////////////////////////
+
+// 4. Linear loop with nested constant loop
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < 100; j++) {
+		printf("%d %d\n", i, j);
+	}
+}
+
+////////////////////////////////////////////////
+
+// 5. Double loop with dependent bounds
+for (int i = 0; i < n; i++) {
+	for (int j = i; j < n; j++) {
+		printf("%d %d\n", i, j);
+	}
+}
+
+////////////////////////////////////////////////
+
+// 6. Triple loop with mixed bounds
+for (int i = 0; i < n; i++) {
+	for (int j = 0; j < n; j++) {
+		for (int k = 0; k < 10; k++) {
+			printf("%d %d %d\n", i, j, k);
+		}
+	}
+}
+
+////////////////////////////////////////////////
+
+// 7. Fibonacci recursion
+int fib(int n) {
+	if (n <= 1) return n;
+	return fib(n-1) + fib(n-2);
+}
+printf("%d\n", fib(n));
+
+////////////////////////////////////////////////
+
+// 8. Factorial recursion
+int fact(int n) {
+	if (n <= 1) return 1;
+	return n * fact(n-1);
+}
+printf("%d\n", fact(n));
