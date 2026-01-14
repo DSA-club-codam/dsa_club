@@ -55,3 +55,29 @@ for (int i = 0; i < n; i++) {
         printf("%d %d\n", i, j);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+1. O(n).
+2. O(n^2)
+3. O(log n) -> Intro to logarithms https://www.mathsisfun.com/algebra/logarithms.html
+4. O(n)
+5. O(n^3)
+6. O(1)
+7. O(n × 1) = O(n)
