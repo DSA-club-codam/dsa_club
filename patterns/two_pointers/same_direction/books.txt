@@ -1,0 +1,3 @@
+problem - https://codeforces.com/contest/279/problem/B
+
+help - https://usaco.guide/silver/two-pointers?lang=cpp#solution---books:~:text=problem%20before%20continuing!-,Solution%20%2D%20Books,.,-Here%27s%20an%20animation
